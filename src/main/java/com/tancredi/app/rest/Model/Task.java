@@ -1,19 +1,18 @@
 package com.tancredi.app.rest.Model;
 
 import lombok.Getter;
-import org.springframework.boot.autoconfigure.web.WebProperties;
-
 import javax.persistence.*;
 
 @Entity
 @Getter
-@Table(name = "TasksCrud")
+@Table(schema = "TasksCrud")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column
     private String title;
+    @Column
     private String description;
 
     public static final class TaskBuilder {
